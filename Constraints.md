@@ -1,3 +1,4 @@
+### Constraints
 | ID | Constraint |
 |:-----|:-----|
 | CON-1 | The system must use the institution's existing single sign-on (SSO) provider as the sole method for user authentication, and must not implement a separate, standalone login system. |
