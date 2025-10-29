@@ -1,3 +1,4 @@
+### Concerns
 | ID | Concern |
 |:-----|:-----|
 | CRN-1 | The architecture must strictly enforce data segregation and role-based access control to ensure that sensitive user data (e.g., student grades, performance) is only accessible to the authenticated user and authorized roles (e.g., their lecturers). |
