@@ -1,3 +1,3 @@
 # Concern(s): 
-
-Stakeholders are concerned about how data such as grades, presonal details, and other sensitive information will be handled and used for AI Model training.
+## Integration Reliability between Systems:
+The system relies on real time data from multiple sources such as LMS, registration, and more. Anything from downtime to integration failures would result in the functionality of the system being lost, and it cold lead to users recieving incorrect or even misleading infromation.
