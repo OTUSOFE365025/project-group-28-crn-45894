@@ -1,5 +1,5 @@
 # Contraint(s):
 
-| Constraint | Requirement |
+| Constraint | Description |
 |------------|-------------|
-|The AIDAP should support up to 1000 concurrent users | RA7, R7 |
+|CON-1: Availability Requirement | The System should maintain at least 99.5% uptime per month, with automated systems in place to meet our availabitlity requirements |
