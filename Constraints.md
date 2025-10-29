@@ -1,4 +1,4 @@
-# Contraint(s):
+# Constraint(s):
 
 | Constraint | Description |
 |------------|-------------|
