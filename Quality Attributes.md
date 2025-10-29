@@ -1,6 +1,8 @@
 # Quality Attributes
 
-| **ID** | **Attribute** | **Scenario** | **Stimulus** | **Source** | **Environment** | **Artifact** | **Response** | **Response Measure** |
-|:--|:--|:--|:--|:--|:--|:--|:--|:--|
-| QA-1 | Availability | System remains accessible during peak usage. | 5,000 concurrent users during registration period. | Multiple student and lecturer sessions. | Normal system operation under peak load conditions. | Entire AIDAP platform and load balancers. | System remains responsive with automatic failover if needed. | 99.5% uptime monthly; recovery < 30 seconds. |
-| QA-2 | Usability | Intuitive conversational interface. | New student uses AIDAP for the first time. | Student user interface (mobile/web/voice). | First-time user context, no prior training. | Conversation engine and UI components. | System provides clear prompts and helpful responses. | 90% of users can complete tasks without help; satisfaction > 4/5. |
+| **ID** | **Quality Attribute** | **Scenario** | **Stimulus** | **Source** | **Environment** | **Artifact** | **Response** | **Response Measure** | **Associated Use Case** |
+|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
+| QA-1 | Performance | The system must quickly generate a full weekly study plan even under heavy load. | 3,000 simultaneous student requests for plan generation. | Student users. | High server load during midterm season. | AIDAP cloud service and recommendation engine. | Study plan generated without lag or timeout. | Average response time ≤ 2 seconds; success rate ≥ 99 %. | UC-1 |
+| QA-2 | Accuracy | Engagement detection must correctly reflect real student activity. | Weekly analytics aggregation. | Lecturer dashboards. | Normal teaching period. | Data pipeline connecting LMS and analytics engine. | System flags low-participation courses with correct metrics. | ≥ 95 % accuracy in engagement classification. | UC-2 |
+| QA-3 | Usability | First-time users can complete key tasks with no prior training. | New student signs in to create a study plan. | Student mobile/web interface. | Clean, guided UI. | Front-end conversational interface. | Student completes the request successfully on first attempt. | 90 % task-completion rate; satisfaction ≥ 4 / 5. | UC-1 |
+| QA-4 | Reliability | The system must continue sending engagement alerts even if one data source fails. | Temporary loss of connection to LMS. | System maintainer. | Network disruption. | Data-sync module. | Fallback data and queued tasks prevent data loss. | Zero lost notifications; recovery < 1 minute. | UC-2 |
