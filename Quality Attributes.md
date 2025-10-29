@@ -1,3 +1,4 @@
+### Quality Attributes
 | Quality Attribute | Scenario | Associated Use Case |
 |:-----|:-----|:-----|
 | Usability | An administrator wants to assess the platform's adoption. They navigate to the analytics dashboard and successfully generate a usage report showing active users and popular query types for the past month. | UC-1 |
