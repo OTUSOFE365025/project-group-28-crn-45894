@@ -2,5 +2,5 @@
 
 | **ID** | **Quality Attribute** | **Scenario** | **Associated Use Case** |
 |:--|:--|:--|:--|
-| QA-1 | Usability | An administrator checks the analytics dashboard and successfully generates a usage report showing active users and popular queries. | UC-1 |
-| QA-2 | Availability | During peak registration, an administrator initiates a system update. The deployment completes successfully while 5,000 users continue receiving error-free responses within 2 seconds. | UC-2 |
+| QA-1 | Usability | A staff member logs into AIDAP for the first time and easily navigates the dashboard without training, successfully sending a test announcement. | UC-1 |
+| QA-2 | Reliability | During an update, the system maintains full functionality while automatically rerouting any failed API calls to backups. | UC-2 |

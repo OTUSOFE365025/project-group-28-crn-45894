@@ -2,5 +2,5 @@
 
 | **Use Case ID** | **Title** | **Description** |
 |:--|:--|:--|
-| UC-1 | Broadcast Campus-Wide Announcement | An administrator quickly informs all students and faculty about an important event such as a school closure. They use the AIDAP interface to compose and send a broadcast announcement, which is immediately delivered to all users via their preferred interface. (RA3, RA4) |
-| UC-2 | Deploy a Zero-Downtime Update | A system maintainer deploys a new version of the AI model to improve accuracy. The update is rolled out through the CI pipeline without interrupting user service. (RM1, RM2, RM4) |
+| UC-1 | Send Urgent Campus Notification | An administrator sends an emergency message (e.g., weather alert or maintenance issue) through AIDAP. The system instantly broadcasts it across all channels — app, email, and chatbot — ensuring everyone is informed at once. (RA3, RA4) |
+| UC-2 | Roll Out System Enhancement | A maintainer deploys a small improvement to the AI model to boost response accuracy. AIDAP handles the deployment through its CI/CD pipeline, ensuring users never notice downtime. (RM1, RM2, RM4) |
