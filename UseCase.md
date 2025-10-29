@@ -1,6 +1,6 @@
 # Use Cases
 
-| **Use Case ID** | **Title** | **Description** |
-|:--|:--|:--|
-| UC-1 | Send Urgent Campus Notification | An administrator sends an emergency message (e.g., weather alert or maintenance issue) through AIDAP. The system instantly broadcasts it across all channels — app, email, and chatbot — ensuring everyone is informed at once. (RA3, RA4) |
-| UC-2 | Roll Out System Enhancement | A maintainer deploys a small improvement to the AI model to boost response accuracy. AIDAP handles the deployment through its CI/CD pipeline, ensuring users never notice downtime. (RM1, RM2, RM4) |
+| **Use Case ID** | **Title** | **Actor** | **Description** | **Preconditions** | **Basic Flow** | **Postconditions** |
+|:--|:--|:--|:--|:--|:--|:--|
+| UC-1 | Check Personalized Dashboard | Student | Student views their upcoming events and academic performance. | Student is authenticated via SSO. | 1. Student opens AIDAP mobile app.<br>2. System authenticates via university SSO.<br>3. Student selects "My Dashboard".<br>4. System fetches calendar events, grades, announcements.<br>5. System displays personalized dashboard. | Student sees their upcoming deadlines and performance metrics. |
+| UC-2 | Post Automated Reminder | Lecturer | Lecturer schedules automated deadline reminders. | Lecturer is authenticated and has course access. | 1. Lecturer says "Remind CS101 students about assignment due Friday".<br>2. System confirms course authorization.<br>3. Lecturer specifies reminder details and timing.<br>4. System schedules automated notifications.<br>5. System sends reminders at specified time. | Students receive deadline reminders. |

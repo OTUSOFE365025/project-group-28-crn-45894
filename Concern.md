@@ -1,6 +1,5 @@
-# Architectural Concerns
+# Architectural Concern
 
-| **ID** | **Concern** | **Description** |
-|:--|:--|:--|
-| CN-1 | Privacy and Data Segregation | The architecture must ensure personal data from different users and departments remain isolated, even during shared query processing. |
-| CN-2 | Resilience to External Failures | The system must remain stable and responsive even when an external data source (like the LMS or calendar API) experiences downtime. |
+| **ID** | **Concern** | **Description** | **Stakeholders** | **Impact** |
+|:--|:--|:--|:--|:--|
+| CN-1 | AI Model Accuracy and Maintenance | Ensuring the AI conversation model remains accurate and up-to-date with academic terminology. | Students, Lecturers, System Maintainers | Poor model accuracy could lead to incorrect academic information and user frustration. |
