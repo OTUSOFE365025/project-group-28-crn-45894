@@ -19,10 +19,17 @@ The selected drivers for this iteration are:
 We want to refine the entire AI-Powered Digital Assistant Platform (AIDAP) system to define its initial, high-level architectural structure.
 
 ## Step 4
-
+| Design Decisions and Location | Rationale |
+| ----------- | ----------- |
+| Logically structure the system using a Layered (N-Tier) Cloud-Native Architecture with a clear separation between Presentation, Application/Business, and Data layers | This provides a strong foundational structure that supports modifiability (QA-5) by isolating changes. The Presentation Layer can be developed independently for web, mobile, and voice (aligned with CON-4), while the business logic for use cases like UC-3 is centralized. It is the standard pattern for building scalable, cloud-native applications (providing a foundation for CON-3) |
+| Implement an API Gateway as the single entry point for all client requests | The API Gateway is crucial for handling diverse clients (web, mobile, voice - CON-4) from a single backend. It provides a central point to implement security policies, including routing authentication requests to the SSO provider (CON-1). It also offloads common concerns like rate limiting and routing, contributing to availability (CON-3) |
+| Do not implement a custom user authentication system. Instead, integrate with the external SSO provider via a standard protocol (e.g., OAuth 2.0 / OpenID Connect) | This directly satisfies constraint CON-1. It centralizes security logic, improves security (QA-4) by leveraging a proven system, and simplifies the architecture by removing the responsibility for credential management |
+| Access all external university data sources (LMS, Calendar, etc.) through a dedicated Integration Layer that uses REST/GraphQL clients | This directly enforces CON-2 and is the primary mechanism to achieve modifiability (QA-5). By encapsulating all external communication into a dedicated layer, changes or additions to data sources (as in UC-6) are isolated, preventing ripple effects on the core business logic |
 
 ## Step 5
-
+| Design Decisions and Location | Rationale |
+| ----------- | ----------- |
+| temp | temp |
 
 ## Step 6
 
