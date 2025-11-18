@@ -26,12 +26,23 @@ We want to refine the entire AI-Powered Digital Assistant Platform (AIDAP) syste
 | Do not implement a custom user authentication system. Instead, integrate with the external SSO provider via a standard protocol (e.g., OAuth 2.0 / OpenID Connect) | This directly satisfies constraint CON-1. It centralizes security logic, improves security (QA-4) by leveraging a proven system, and simplifies the architecture by removing the responsibility for credential management |
 | Access all external university data sources (LMS, Calendar, etc.) through a dedicated Integration Layer that uses REST/GraphQL clients | This directly enforces CON-2 and is the primary mechanism to achieve modifiability (QA-5). By encapsulating all external communication into a dedicated layer, changes or additions to data sources (as in UC-6) are isolated, preventing ripple effects on the core business logic |
 
-## Step 5
+## Step 5: Instantatiate Architectural Elements, Allocate Repsonsibilites, & Define Interfaces
 | Design Decisions and Location | Rationale |
 | ----------- | ----------- |
-| temp | temp |
+| Create an Authentication and Session management service that integrates behind the API Gateway dexcribed above through the university's SSO. | Our system will not store passwords, it will just handle redirects into the universities' SSO, allowing existing university systems to handle authorization. This will satisfy requirements: (RS7, RS8, RA5)|
+| Introduce a Persistent Storage Component meant to store internal system daata (ex. AI Conversation History, Settings, cached data) | Creating and implementing this component will seperate internal system data related to our application from university data. That will simplify including handling university privacy policies (RA5). It'll store historical interactions (R2), it'll allow easier interactivity with dashboards (RS3), and it'll allow the chatbot to learn from prior conversations (RS5) |
 
 ## Step 6
 
 
-## Step 7
+## Step 7: Perform Analysis of Current Design and Review Iteration Goal and Achievement of Design Purpose
+
+| Not Addressed | Partially Addressed | Comepletely Addressed | Explanation |
+|---------------|---------------------|-----------------------|-------------|
+|  | UC-3 |  |  |
+|  |  | CON-1 | We fully use hte universities' SSO for authentication, which satisfies teh constraint completely |
+|  |  | CON-2 | Using a dedicated Integration Layer to communicate with university systems will fully satisfy this constraint |
+|  | QA-4 |  | High level secuirty is tackled through SSO and the Authentication service, but low level details are still missing |
+|  | QA-5 |  | Modifiability is mostly supported by our layered architecture adn connectors, but ways to extend arent yet defined |
+
+
