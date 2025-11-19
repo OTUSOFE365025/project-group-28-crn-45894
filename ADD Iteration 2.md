@@ -1,5 +1,5 @@
 # Iteration 1
-## Step 1
+## Step 1: Review Inputs
 (Not needed for further Iterations).
 
 ## Step 2: Establish Iteration Goal by Selecting Drivers
@@ -37,5 +37,5 @@ The elements selected for refinement in this iteration are the Presentation Laye
 ## Step 7: Perform Analysis of Current Design and Review Iteration Goal and Achievement of Design Purpose
 
 | Not Addressed | Partially Addressed | Comepletely Addressed | Explanation |
-|---------------|---------------------|-----------------------|-------------|
+|:---------------:|:---------------------:|:-----------------------:|-------------|
 
