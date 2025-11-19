@@ -78,7 +78,7 @@ We want to refine the entire AI-Powered Digital Assistant Platform (AIDAP) syste
 ## Step 7: Perform Analysis of Current Design and Review Iteration Goal and Achievement of Design Purpose
 
 | Not Addressed | Partially Addressed | Comepletely Addressed | Explanation |
-|---------------|---------------------|-----------------------|-------------|
+|:---------------:|:---------------------:|:-----------------------:|-------------|
 |  | UC-3 |  |  |
 |  |  | CON-1 | We fully use hte universities' SSO for authentication, which satisfies teh constraint completely |
 |  |  | CON-2 | Using a dedicated Integration Layer to communicate with university systems will fully satisfy this constraint |
