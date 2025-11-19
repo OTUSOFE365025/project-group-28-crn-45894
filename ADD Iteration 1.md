@@ -1,12 +1,12 @@
 # Iteration 1
-## Step 1
+## Step 1: Review Inputs
 | Category      | Details |
 | ----------- | ----------- |
 | Design Purpose | 	To establish the foundational structure for a cloud-native, AI-powered conversational platform |
 | Primary Functional Requirements | UC-3 (Check Next Exam Date): Represents the core student query function. UC-6 (Onboard a New Data Source): Critical for long-term system evolvability |
 | Quality Attrbiutes | QA-4 (Security), QA-5 (Modifiability) |
 
-## Step 2
+## Step 2: Establish Iteration Goal by Selecting Drivers
 This is the first iteration in the design of a greenfield system. The goal is to establish the overall, high-level structure of the system, creating a foundation that addresses the core functional need of a conversational AI agent while being fundamentally scalable, secure, and integrable.
 
 The selected drivers for this iteration are:
@@ -15,10 +15,10 @@ The selected drivers for this iteration are:
 - CON-1 (Use Institution's SSO): This is a critical constraint that fundamentally shapes the security and user authentication model, requiring a dedicated authentication component
 - CON-2 (Use Standard APIs): This constraint directly shapes the integration strategy and the interfaces between the system's components and external data sources, supporting QA-5
 
-## Step 3
+## Step 3: Choose One or More Elements of the System to Refine
 We want to refine the entire AI-Powered Digital Assistant Platform (AIDAP) system to define its initial, high-level architectural structure.
 
-## Step 4
+## Step 4: Choose One or More Design Concepts That Satisfy the Selected Drivers
 | Design Decisions and Location | Rationale |
 | ----------- | ----------- |
 | Logically structure the system using a Layered (N-Tier) Cloud-Native Architecture with a clear separation between Presentation, Application/Business, and Data layers | This provides a strong foundational structure that supports modifiability (QA-5) by isolating changes. The Presentation Layer can be developed independently for web, mobile, and voice (aligned with CON-4), while the business logic for use cases like UC-3 is centralized. It is the standard pattern for building scalable, cloud-native applications (providing a foundation for CON-3) |
@@ -32,7 +32,7 @@ We want to refine the entire AI-Powered Digital Assistant Platform (AIDAP) syste
 | Create an Authentication and Session management service that integrates behind the API Gateway dexcribed above through the university's SSO. | Our system will not store passwords, it will just handle redirects into the universities' SSO, allowing existing university systems to handle authorization. This will satisfy requirements: (RS7, RS8, RA5)|
 | Introduce a Persistent Storage Component meant to store internal system daata (ex. AI Conversation History, Settings, cached data) | Creating and implementing this component will seperate internal system data related to our application from university data. That will simplify including handling university privacy policies (RA5). It'll store historical interactions (R2), it'll allow easier interactivity with dashboards (RS3), and it'll allow the chatbot to learn from prior conversations (RS5) |
 
-## Step 6
+## Step 6: Sketch Views and Record Design Decisions
 
 ### View 1 – Layered Logical Architecture
 
