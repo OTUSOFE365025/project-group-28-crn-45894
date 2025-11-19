@@ -34,6 +34,46 @@ We want to refine the entire AI-Powered Digital Assistant Platform (AIDAP) syste
 
 ## Step 6
 
+### View 1 – Layered Logical Architecture
+
+| Element                   | Responsibility                                                               |
+| ------------------------- | ---------------------------------------------------------------------------- |
+| Chat UIs                  | Provide text and voice conversational interfaces for all stakeholders.       |
+| Conversation Orchestrator | Routes each user request through NLU, session, personalization, and data.    |
+| NLU/NLG Engine            | Uses AI models to interpret natural-language queries and generate responses. |
+| Session Manager           | Tracks ongoing conversations and context per user.                           |
+| Integration Gateway       | Single entry point to LMS, Registration, Calendar and Mail APIs.             |
+| User Profile & History DB | Stores conversations and preferences for personalization.                    |
+| Analytics & Dashboards    | Computes academic analytics and summary dashboards.                          |
+
+
+<img width="1218" height="455" alt="AIDAP Diagram" src="https://github.com/user-attachments/assets/aa494d28-7c21-4909-9ebe-e26ff9349835" />
+
+### View 2 – Data & Integration Detail View
+
+| Element                    | Responsibility                                             |
+| -------------------------- | ---------------------------------------------------------- |
+| Interaction History DB     | Persists all past conversations and query logs.            |
+| Config & Policy DB         | Stores security, retention, and personalization policies.  |
+| Notification Service       | Sends deadline reminders and announcements to users.       |
+| Integration Gateway        | Coordinates connectors to each external university system. |
+| LMS / Reg / Calendar Conn. | Adapt each external API to the internal AIDAP model.       |
+
+<img width="997" height="383" alt="Data   Integration View" src="https://github.com/user-attachments/assets/e4128760-dcd9-4637-90bc-3ccecf9035f6" />
+
+### View 3 – Deployment View
+
+| Element              | Responsibility                                                        |
+| -------------------- | --------------------------------------------------------------------- |
+| User Devices         | Browsers/mobile/voice clients used by students, lecturers, admins.    |
+| API Gateway          | Single public endpoint; handles auth (SSO), routing, throttling.      |
+| Conversation Service | Hosts orchestrator, NLU/NLG, session management.                      |
+| Data & Integration   | Hosts notification service, connectors, and manages persistence.      |
+| AIDAP Cluster        | Cloud deployment unit providing scalability and high availability.    |
+| University Systems   | Existing LMS, Registration, Calendar/Mail services consumed via APIs. |
+
+
+<img width="997" height="383" alt="Data   Integration View" src="https://github.com/user-attachments/assets/32c5a3dd-5dde-4892-a1e1-0d2591b858da" />
 
 ## Step 7: Perform Analysis of Current Design and Review Iteration Goal and Achievement of Design Purpose
 
