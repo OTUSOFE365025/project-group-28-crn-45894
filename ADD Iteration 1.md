@@ -79,8 +79,8 @@ We want to refine the entire AI-Powered Digital Assistant Platform (AIDAP) syste
 
 | Not Addressed | Partially Addressed | Comepletely Addressed | Explanation |
 |:---------------:|:---------------------:|:-----------------------:|-------------|
-|  | UC-3 |  |  |
-|  |  | CON-1 | We fully use hte universities' SSO for authentication, which satisfies teh constraint completely |
+|  | UC-3 |  | The architecture shows where UC-3 will run, mainly concerning the Gateway, Authentication, and Integration Layer. But smaller details such as data mapping etc. are still not planned |
+|  |  | CON-1 | We fully use the universities' SSO for authentication, which satisfies the constraint completely |
 |  |  | CON-2 | Using a dedicated Integration Layer to communicate with university systems will fully satisfy this constraint |
 |  | QA-4 |  | High level secuirty is tackled through SSO and the Authentication service, but low level details are still missing |
 |  | QA-5 |  | Modifiability is mostly supported by our layered architecture adn connectors, but ways to extend arent yet defined |
