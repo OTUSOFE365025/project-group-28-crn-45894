@@ -40,6 +40,43 @@ The elements selected for refinement in this iteration are the Presentation Laye
 
 ## Step 6: Sketch Views and Record Design Decisions
 
+### View 1 – Layered Logical Architecture
+
+| Element                    | Responsibility                                             |
+| -------------------------- | ---------------------------------------------------------- |
+| ChatController     | Handles incoming conversational requests from users and manages the text/voice interface for the AI assistant. |
+| DashboardController | Processes requests for personalized dashboard views and serves aggregated academic information to authenticated users. |
+| NotificationSettingsController | Manages user preferences for notification delivery methods and frequency across different communication channels. |
+| ConversationOrchestrator | Coordinates the flow of conversational requests through NLU processing, context management, and response generation. |
+| ExamService | Contains business logic specific to exam-related queries, including date retrieval and exam information validation. |
+| DashboardService | Aggregates data from multiple sources to compile personalized dashboard content for individual users. |
+| NotificationService | Manages the scheduling and delivery of proactive notifications to users based on their preferences and academic events. |
+| RegistrationClient | Handles API communication with the university registration system to retrieve course enrollment and student information. |
+| LmsClient |	Interfaces with the Learning Management System to access course materials, assignments, and grade information. |
+| CalendarClient | 	Connects to university calendar systems to retrieve academic events, deadlines, and schedule information. |
+| NotificationGateway | Routes notifications to appropriate delivery channels (email, SMS, push) based on user preferences and system configuration. |
+| ExamRepository | Manages persistence and retrieval of exam-related data, including dates, locations, and exam-specific metadata. |
+| AssignmentRepository | Handles data access operations for assignment information, including due dates, requirements, and submission status. |
+| UserPreferencesRepository | 	Stores and retrieves user-specific settings for notification preferences, language selection, and dashboard customization. |
+
+<img width="841" height="394" alt="image" src="https://github.com/user-attachments/assets/6882038d-621f-4e7d-93ab-f340973f8fa8" />
+
+### View 2 – Data & Integration Detail View
+
+| Element | Responsibility |
+|---------|----------------|
+| ConversationOrchestrator | Coordinates the end-to-end flow of conversational requests, managing interactions between services and ensuring coherent response generation. |
+| ExamService | Contains business logic for processing exam-related queries, including date lookups, conflict detection, and exam information validation. |
+| ExamRepository | Handles data persistence and retrieval operations for exam entities, including scheduling information and exam metadata. |
+| LmsClient | Manages API communication with the Learning Management System to access course content, assignments, and academic materials. |
+| CalendarClient | Interfaces with university calendar systems to retrieve and synchronize academic events, schedules, and institutional deadlines. |
+| NotificationService | Orchestrates the delivery of proactive notifications and reminders based on academic events and user subscription preferences. |
+| AssignmentRepository | Manages data access operations for assignment-related information, including due dates, requirements, and submission tracking. |
+| UserPreferencesRepository | Stores and retrieves user-specific configuration settings, including notification preferences and personalization options. |
+| NotificationGateway | Routes outgoing notifications to appropriate delivery channels (email, SMS, push) based on system configuration and user choices. |
+
+
+<img width="1080" height="390" alt="image" src="https://github.com/user-attachments/assets/398642fe-1785-48f1-bbe7-47853ff42adc" />
 
 ## Step 7: Perform Analysis of Current Design and Review Iteration Goal and Achievement of Design Purpose
 | Not Addressed | Partially Addressed | Comepletely Addressed | Explanation                                                                                                                                                                                                                                                                                                                                                 |
