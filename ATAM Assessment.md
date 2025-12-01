@@ -16,7 +16,16 @@
 ### Non-Risks
 - N1: 
 - N2: 
-- N3: 
+- N3:
+
+### Architectural Decisions
+| Decision | Description |
+|:---------|:-----------:|
+| AD-1:  |  |
+| AD-2:  |  |
+| AD-3:  |  |
+| AD-4:  |  |
+| AD-5:  |  |
 
 ### Scenario Table
 | Portion | Description |
