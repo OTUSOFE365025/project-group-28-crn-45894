@@ -34,7 +34,7 @@ For this availability and deployment scenario, the elements to be refined are th
 
 ## Step 6: Sketch Views and Record Design Decisions
 
-### View 1 - 
+### View 1 - Deployment View
 
 | Element              | Responsibility |
 |----------------------|----------------|
@@ -45,7 +45,7 @@ For this availability and deployment scenario, the elements to be refined are th
 <img width="837" height="1028" alt="DeploymentDiagram" src="https://github.com/user-attachments/assets/45ce6a6e-8601-4a7c-9f11-2ac50223d00c" />
 
 
-### View 2 – 
+### View 2 – Sequence Diagram
 
 | Element                | Responsibility |
 |------------------------|----------------|
@@ -54,7 +54,6 @@ For this availability and deployment scenario, the elements to be refined are th
 | DataIntegrationService | Asynchronously consumes the event from the queue to process the logic (e.g., sending emails or updating the LMS) without blocking the user's interface. |
 
 <img width="1071" height="540" alt="SequenceDiagram" src="https://github.com/user-attachments/assets/d614a4e7-08c3-440e-980c-4e3ae1fb5c8f" />
-
 
 
 ## Step 7: Perform Analysis of Current Design and Review Iteration Goal and Achievement of Design Purpose
