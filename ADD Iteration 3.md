@@ -36,14 +36,24 @@ For this availability and deployment scenario, the elements to be refined are th
 
 ### View 1 - 
 
-| Element | Responsibility |
-| -------------------------- | --------------------- |
+| Element              | Responsibility |
+|----------------------|----------------|
+| LoadBalancer         | Acts as the single entry point for traffic. It performs health checks and distributes incoming requests across the active APIGateway replicas. If a node fails, it reroutes traffic to healthy nodes. |
+| MessageQueue         | A persistent buffer (e.g., Kafka/RabbitMQ) that decouples the ConversationService from the DataIntegrationService. It ensures that tasks (like notifications) are not lost if the processing service is temporarily down during an update. |
+| DeploymentCoordinator | An external tool/service that manages the Blue-Green deployment pipeline. It orchestrates the creation of new replica sets and updates the Ingress/LoadBalancer rules. |
+
+<img width="837" height="1028" alt="DeploymentDiagram" src="https://github.com/user-attachments/assets/45ce6a6e-8601-4a7c-9f11-2ac50223d00c" />
 
 
 ### View 2 – 
 
-| Element | Responsibility |
-|---------|----------------|
+| Element                | Responsibility |
+|------------------------|----------------|
+| Ingress/LoadBalancer   | Receives the initial HTTP request and routes it to the least busy ConversationService instance. |
+| ConversationService    | Validates the request and immediately acknowledges receipt to the user (ensuring the <2s response time). It then offloads the heavy processing by publishing an event to the MessageQueue. |
+| DataIntegrationService | Asynchronously consumes the event from the queue to process the logic (e.g., sending emails or updating the LMS) without blocking the user's interface. |
+
+<img width="1071" height="540" alt="SequenceDiagram" src="https://github.com/user-attachments/assets/d614a4e7-08c3-440e-980c-4e3ae1fb5c8f" />
 
 
 
