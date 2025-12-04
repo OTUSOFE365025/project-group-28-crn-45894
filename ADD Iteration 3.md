@@ -59,4 +59,7 @@ For this availability and deployment scenario, the elements to be refined are th
 ## Step 7: Perform Analysis of Current Design and Review Iteration Goal and Achievement of Design Purpose
 | Not Addressed | Partially Addressed | Comepletely Addressed | Explanation |
 | :-----------: | :-----------------: | :-------------------: | ------------ |
-
+|  | QA-2 |  | QA-2: Availability during updates: The Blue-Green deployment strategy, load balancing, and service replication provide a strong foundation for zero-downtime updates. However, specific failure recovery time objectives (e.g., <30 seconds) and detailed rollback procedures are not yet fully designed. |
+|  | UC-2 |  | UC-2: Deploy a Zero-Downtime Update: The deployment pipeline and coordinator service are conceptually defined, but implementation details (CI/CD integration, monitoring hooks) remain to be specified. |
+|  | CON-3 |  | CON-3: 99.5% uptime: Redundancy and load balancing improve availability, but automated failover mechanisms, database replication, and cross-region deployment are not yet addressed. |
+|  |  | Iteration Goal | Overall Iteration Goal: The iteration successfully introduced key availability and deployment patterns (active redundancy, load balancing, Blue-Green, message queues). The physical and operational view of the system has been refined to support high availability and seamless updates. Further refinement of failure modes, monitoring, and database redundancy is required in subsequent iterations. |
