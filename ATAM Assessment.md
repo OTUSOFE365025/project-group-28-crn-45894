@@ -16,22 +16,22 @@
 ### Sensitivities
 - S1: The **switching time between blue and green environments** is sensitive to network latency and health check intervals. If the switchover takes >5 seconds, user sessions may drop
 - S2: The Database Connection Pool size is sensitive to the number of active replicas during deployment. During the Blue-Green overlap, the number of application instances doubles (Blue + Green), which could exhaust the maximum allowed database connections, causing queries to fail.
-- S3: 
+- S3: Message queue throughput is sensitive to burst traffic during deployment. If the queue becomes saturated, notification delays may affect user experience
 
 ### Trade-Offs
 - T1: **Blue-Green Deployment improves Availability (+) but increases Infrastructure Cost (-).** Maintaining two identical environments doubles cloud resource usage during updates
 - T2: Asynchronous Message Queuing improves Performance (Response Latency) (+) by offloading heavy tasks (like notifications) from the main thread, but it negatively impacts Data Consistency/Timeliness (-). Users receive immediate UI confirmation, but the actual action (e.g., email receipt) happens with eventual consistency.
-- T3: 
+- T3: Message Queue improves Performance (+) and Modifiability (+) but introduces Latency (-) for asynchronous tasks, which may affect real-time notification delivery
 
 ### Risks
 - R1: **Session state loss during blue-green switchover.** If user session data is not replicated between environments, users may lose context or be logged out
 - R2: Database Schema Incompatibility. If the new "Green" version requires a database schema change (e.g., renaming a column) that is not backward compatible, the "Blue" version (which is still live during the transition) may start failing, causing system-wide errors.
-- R3: 
+- R3: Message queue single point of failure. If the queue service fails, asynchronous operations (notifications, data sync) will halt, affecting system functionality
 
 ### Non-Risks
 - N1: **API Gateway maintains routing consistency during cutover.** The gateway continues to route traffic to the active environment without disruption
 - N2: Single Container/Pod Failure. Because Active Redundancy is implemented with Kubernetes replicas, the failure of a single ConversationService node is a non-risk. The Load Balancer will automatically detect the failure and route traffic to the remaining healthy replicas without service interruption.
-- N3:
+- N3: Integration Layer abstraction allows AI model updates without modifying external system connectors, supporting modifiability
 
 ---
 
