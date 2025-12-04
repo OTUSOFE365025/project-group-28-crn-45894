@@ -55,10 +55,10 @@
 | **Response**      | Update completes successfully with no downtime and maintained <2-second response time. |
 
 | Architecture Decision | Sensitivity | Tradeoff | Risk | Nonrisk |
-|-----------------------|-------------|----------|------|---------|
+|-----------------------|:-----------:|:--------:|:----:|:-------:|
 | **AD1: Layered Architecture** | | | | |
-| **AD2: API Gateway** | | | | |
-| **AD3: Blue-Green Deployment** | | | | |
-| **AD4: Kubernetes Replication** | | | | |
-| **AD5: Message Queue** | | | | |
-| **AD6: Dedicated Integration Layer** | | | | |
+| **AD2: API Gateway** | | | | N1 |
+| **AD3: Blue-Green Deployment** | S1, S2 | T1 | R1, R2 | |
+| **AD4: Kubernetes Replication** | S2 | | | N2 |
+| **AD5: Message Queue** | S3 | T2, T3 | R3 | |
+| **AD6: Dedicated Integration Layer** | | | | N3 |
